@@ -43,7 +43,7 @@ nav {
     background-color: #2f3136;
     border-color: #232529;
     width: 1280px;
-    height: 220px;
+    height: 240px;
     z-index: 99999;
     margin-top: 68px;
 }
@@ -68,7 +68,7 @@ nav {
     width: 50%;
     float:left;
     display: block;
-    height: 218px;
+    height: 238px;
     border-right: 2px;
     border-style: solid;
     border-color: #232529;
@@ -85,8 +85,8 @@ nav {
     background: 0 0;
     color: #caccd0;
     border: none;
-    height: 216px;
-    width: 96%;
+    height: 140px;
+    width: 98%;
     font-size: 20px;
     resize: none;
     padding: 8px;
@@ -103,7 +103,7 @@ nav {
     color: #caccd0;
     display: block;
     padding-left: 12px;
-    padding-top: 9px;
+    padding-top: 11px;
     font-size: 20px;
     padding: 8px
     height: 60px;
@@ -116,4 +116,13 @@ nav {
 
 .second_language{
     float:right;
+}
+
+.copy{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 10px;
+    bottom: 7px;
+    cursor: pointer;
 }

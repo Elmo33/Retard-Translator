@@ -102,16 +102,15 @@ nav {
     background: 0 0;
     color: #caccd0;
     display: block;
-    padding-left: 12px;
-    padding-top: 11px;
     font-size: 20px;
-    padding: 8px
-    height: 60px;
+    height: 100%;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .first_language{
     float:left;
+
 }
 
 .second_language{
@@ -125,4 +124,23 @@ nav {
     right: 10px;
     bottom: 7px;
     cursor: pointer;
+}
+
+.language_box{
+    left: 0px;
+    top: 0px;
+    width: 20%;
+    padding: 10px;
+    height: 100%;
+    display: inline-block;
+}
+
+.language_box:hover {
+    background-color: #393a3e;
+}
+
+.chosen_language{
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: #caccd0;
 }

@@ -146,11 +146,11 @@ nav {
 }
 
 .main_icon{
-    height: 42px;
-    width: 42px;
+    height: 38px;
+    width: 38px;
     display: block;
-    top: 5px;
-    left: 13px;
+    top: 7px;
+    left: 15px;
     position: absolute;
     cursor: pointer;
 }

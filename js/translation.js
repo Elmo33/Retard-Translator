@@ -12,7 +12,7 @@ document.getElementById("retard").addEventListener("click", event => {
         langUwU.classList.remove("chosen_language");
     }
     if(langGeorgian.classList.contains("chosen_language")){
-        langRetard.classList.remove("chosen_language")
+        langGeorgian.classList.remove("chosen_language")
     }
     languagePicker()
 });

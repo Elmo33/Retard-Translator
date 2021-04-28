@@ -22,7 +22,7 @@ document.getElementById("uwu").addEventListener("click", event => {
         langRetard.classList.remove("chosen_language")
     }
     if(langGeorgian.classList.contains("chosen_language")){
-        langRetard.classList.remove("chosen_language")
+        langGeorgian.classList.remove("chosen_language")
     }
     if(!langUwU.classList.contains("chosen_language")){
         langUwU.classList.add("chosen_language");
@@ -35,7 +35,7 @@ document.getElementById("georgian").addEventListener("click", event => {
         langRetard.classList.remove("chosen_language")
     }
     if(langUwU.classList.contains("chosen_language")){
-        langRetard.classList.remove("chosen_language")
+        langUwU.classList.remove("chosen_language")
     }
     if(!langGeorgian.classList.contains("chosen_language")){
         langGeorgian.classList.add("chosen_language");

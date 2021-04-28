@@ -2,6 +2,7 @@ let translateFrom = document.getElementById("text-input");
 let translateTo = document.getElementById("text-output");
 let langRetard = document.getElementById("retard");
 let langUwU = document.getElementById("uwu");
+let langGeorgian = document.getElementById("georgian");
 
 document.getElementById("retard").addEventListener("click", event => {
     if(!langRetard.classList.contains("chosen_language")){
@@ -10,6 +11,9 @@ document.getElementById("retard").addEventListener("click", event => {
     if(langUwU.classList.contains("chosen_language")){
         langUwU.classList.remove("chosen_language");
     }
+    if(langGeorgian.classList.contains("chosen_language")){
+        langRetard.classList.remove("chosen_language")
+    }
     languagePicker()
 });
 
@@ -17,8 +21,24 @@ document.getElementById("uwu").addEventListener("click", event => {
     if(langRetard.classList.contains("chosen_language")){
         langRetard.classList.remove("chosen_language")
     }
+    if(langGeorgian.classList.contains("chosen_language")){
+        langRetard.classList.remove("chosen_language")
+    }
     if(!langUwU.classList.contains("chosen_language")){
         langUwU.classList.add("chosen_language");
+    }
+    languagePicker()
+});
+
+document.getElementById("georgian").addEventListener("click", event => {
+    if(langRetard.classList.contains("chosen_language")){
+        langRetard.classList.remove("chosen_language")
+    }
+    if(langUwU.classList.contains("chosen_language")){
+        langRetard.classList.remove("chosen_language")
+    }
+    if(!langGeorgian.classList.contains("chosen_language")){
+        langGeorgian.classList.add("chosen_language");
     }
     languagePicker()
 });
@@ -75,6 +95,29 @@ function translationUwU(inputTxt, outputTxtBox){
     outputTxtBox.innerHTML = strArray.join('');
 }
 
+function translationGeorgian(inputTxt, outputTxtBox){
+    var strArray = inputTxt.split("");
+    for (let i = 0; i < strArray.length; i++) {
+        if(strArray[i] === 'a' )
+            strArray[i] = 'i'
+        if(strArray[i] === 'e')
+            strArray[i] = 'i'
+        if(strArray[i] === "o")
+            strArray[i] = "i"
+        if(strArray[i] === 'u')
+            strArray[i] = 'i'
+        if(strArray[i] === 'ა')
+            strArray[i] = 'ი'
+        if(strArray[i] === "ე")
+            strArray[i] = "ი"
+        if(strArray[i] === 'ო')
+            strArray[i] = 'ი'
+        if(strArray[i] === "უ")
+            strArray[i] = "ი"
+    }
+    outputTxtBox.innerHTML = strArray.join('');
+}
+
 function languagePicker(inputTxt, outputTxtBox){
     var inputTxt = document.getElementById("text-input").value.toLowerCase();
     var outputTxtBox = document.getElementById("text-output");
@@ -84,6 +127,9 @@ function languagePicker(inputTxt, outputTxtBox){
     }
     if(langUwU.classList.contains("chosen_language")){
         translationUwU(inputTxt, outputTxtBox)
+    }
+    if(langGeorgian.classList.contains("chosen_language")){
+        translationGeorgian(inputTxt, outputTxtBox)
     }
 }
 

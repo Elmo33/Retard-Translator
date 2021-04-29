@@ -144,6 +144,12 @@ nav {
     border-color: #caccd0;
 }
 
+.chosen_english{
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: #caccd0;
+}
+
 .main_icon{
     height: 38px;
     width: 38px;

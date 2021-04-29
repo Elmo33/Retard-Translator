@@ -1,69 +1,28 @@
-let translateFrom = document.getElementById("text-input");
-let translateTo = document.getElementById("text-output");
 let langRetard = document.getElementById("retard");
 let langUwU = document.getElementById("uwu");
 let langGeorgian = document.getElementById("georgian");
 
 document.getElementById("retard").addEventListener("click", event => {
-    if(!langRetard.classList.contains("chosen_language")){
-        langRetard.classList.add("chosen_language")
-    }
-    if(langUwU.classList.contains("chosen_language")){
-        langUwU.classList.remove("chosen_language");
-    }
-    if(langGeorgian.classList.contains("chosen_language")){
-        langGeorgian.classList.remove("chosen_language")
-    }
-    languagePicker()
+    languagePicker(langRetard);
+    translate()
 });
 
 document.getElementById("uwu").addEventListener("click", event => {
-    if(langRetard.classList.contains("chosen_language")){
-        langRetard.classList.remove("chosen_language")
-    }
-    if(langGeorgian.classList.contains("chosen_language")){
-        langGeorgian.classList.remove("chosen_language")
-    }
-    if(!langUwU.classList.contains("chosen_language")){
-        langUwU.classList.add("chosen_language");
-    }
-    languagePicker()
+    languagePicker(langUwU);
+    translate()
 });
 
 document.getElementById("georgian").addEventListener("click", event => {
-    if(langRetard.classList.contains("chosen_language")){
-        langRetard.classList.remove("chosen_language")
-    }
-    if(langUwU.classList.contains("chosen_language")){
-        langUwU.classList.remove("chosen_language")
-    }
-    if(!langGeorgian.classList.contains("chosen_language")){
-        langGeorgian.classList.add("chosen_language");
-    }
-    languagePicker()
+    languagePicker(langGeorgian); //select georgian
+    translate() //perform translation instantly to new language on language switch
 });
 
 //main translator
-translateFrom.addEventListener("input", event => {
-    languagePicker()
+document.getElementById("text-input").addEventListener("input", event => {
+    translate() //perform translation on each letter type
 });
 
-
-document.getElementById("copy").addEventListener("click", event => {
-    var text = translateTo;
-    text.select();
-    text.setSelectionRange(0, 99999);
-    document.execCommand("copy");
-    clearSelection();
-});
-
-function clearSelection()
-{
-    if (window.getSelection) {window.getSelection().removeAllRanges();}
-    else if (document.selection) {document.selection.empty();}
-}
-
-function translationRetard(inputTxt, outputTxtBox){
+function translationRetard(inputTxt, outputTxtBox){ //function for retard translation
     var strArray = inputTxt.split("");
     for (let i = 0; i < strArray.length; i++) {
         if(i%2 === 1){
@@ -73,7 +32,7 @@ function translationRetard(inputTxt, outputTxtBox){
     outputTxtBox.innerHTML = strArray.join('');
 }
 
-function translationUwU(inputTxt, outputTxtBox){
+function translationUwU(inputTxt, outputTxtBox){ //function for uwu translation
     var strArray = inputTxt.split("");
     for (let i = 0; i < strArray.length; i++) {
         if(strArray[i] === 'r')
@@ -95,7 +54,7 @@ function translationUwU(inputTxt, outputTxtBox){
     outputTxtBox.innerHTML = strArray.join('');
 }
 
-function translationGeorgian(inputTxt, outputTxtBox){
+function translationGeorgian(inputTxt, outputTxtBox){ //function for georgian translation
     var strArray = inputTxt.split("");
     for (let i = 0; i < strArray.length; i++) {
         if(strArray[i] === 'a' )
@@ -118,7 +77,16 @@ function translationGeorgian(inputTxt, outputTxtBox){
     outputTxtBox.innerHTML = strArray.join('');
 }
 
-function languagePicker(inputTxt, outputTxtBox){
+function languagePicker(language){ //function to pick and underline new language
+    let allChosen = document.getElementsByClassName('chosen_language');
+    while(allChosen.length > 0){
+        allChosen[0].classList.remove('chosen_language');
+    }
+    language.classList.add("chosen_language");
+}
+
+function translate(){ //main translate function, checks which language to translate to, and then triggers specific language translation
+
     var inputTxt = document.getElementById("text-input").value.toLowerCase();
     var outputTxtBox = document.getElementById("text-output");
 

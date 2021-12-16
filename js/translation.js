@@ -1,6 +1,6 @@
 let langRetard = document.getElementById("retard");
 let langUwU = document.getElementById("uwu");
-let langGeorgian = document.getElementById("georgian");
+// let langGeorgian = document.getElementById("georgian");
 
 document.getElementById("retard").addEventListener("click", event => {
     languagePicker(langRetard);
@@ -12,10 +12,10 @@ document.getElementById("uwu").addEventListener("click", event => {
     translate()
 });
 
-document.getElementById("georgian").addEventListener("click", event => {
-    languagePicker(langGeorgian); //select georgian
-    translate() //perform translation instantly to new language on language switch
-});
+// document.getElementById("georgian").addEventListener("click", event => {
+//     languagePicker(langGeorgian); //select georgian
+//     translate() //perform translation instantly to new language on language switch
+// });
 
 //main translator
 document.getElementById("text-input").addEventListener("input", event => {
@@ -54,28 +54,28 @@ function translationUwU(inputTxt, outputTxtBox){ //function for uwu translation
     outputTxtBox.innerHTML = strArray.join('');
 }
 
-function translationGeorgian(inputTxt, outputTxtBox){ //function for georgian translation
-    var strArray = inputTxt.split("");
-    for (let i = 0; i < strArray.length; i++) {
-        if(strArray[i] === 'a' )
-            strArray[i] = 'i'
-        if(strArray[i] === 'e')
-            strArray[i] = 'i'
-        if(strArray[i] === "o")
-            strArray[i] = "i"
-        if(strArray[i] === 'u')
-            strArray[i] = 'i'
-        if(strArray[i] === 'ა')
-            strArray[i] = 'ი'
-        if(strArray[i] === "ე")
-            strArray[i] = "ი"
-        if(strArray[i] === 'ო')
-            strArray[i] = 'ი'
-        if(strArray[i] === "უ")
-            strArray[i] = "ი"
-    }
-    outputTxtBox.innerHTML = strArray.join('');
-}
+// function translationGeorgian(inputTxt, outputTxtBox){ //function for georgian translation
+//     var strArray = inputTxt.split("");
+//     for (let i = 0; i < strArray.length; i++) {
+//         if(strArray[i] === 'a' )
+//             strArray[i] = 'i'
+//         if(strArray[i] === 'e')
+//             strArray[i] = 'i'
+//         if(strArray[i] === "o")
+//             strArray[i] = "i"
+//         if(strArray[i] === 'u')
+//             strArray[i] = 'i'
+//         if(strArray[i] === 'ა')
+//             strArray[i] = 'ი'
+//         if(strArray[i] === "ე")
+//             strArray[i] = "ი"
+//         if(strArray[i] === 'ო')
+//             strArray[i] = 'ი'
+//         if(strArray[i] === "უ")
+//             strArray[i] = "ი"
+//     }
+//     outputTxtBox.innerHTML = strArray.join('');
+// }
 
 function languagePicker(language){ //function to pick and underline new language
     let allChosen = document.getElementsByClassName('chosen_language');
@@ -96,8 +96,8 @@ function translate(){ //main translate function, checks which language to transl
     if(langUwU.classList.contains("chosen_language")){
         translationUwU(inputTxt, outputTxtBox)
     }
-    if(langGeorgian.classList.contains("chosen_language")){
-        translationGeorgian(inputTxt, outputTxtBox)
-    }
+//     if(langGeorgian.classList.contains("chosen_language")){
+//         translationGeorgian(inputTxt, outputTxtBox)
+//     }
 }
 
